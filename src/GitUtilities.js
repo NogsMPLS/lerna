@@ -39,9 +39,9 @@ export default class GitUtilities {
   }
 
   @logger.logifySync
-  static pushWithTags(tags) {
-    ChildProcessUtilities.execSync("git push origin " + GitUtilities.getCurrentBranch());
-    ChildProcessUtilities.execSync("git push origin " + tags.join(" "));
+  static pushWithTags(tags, remote) {
+    ChildProcessUtilities.execSync("git push " + remote + " " + GitUtilities.getCurrentBranch());
+    ChildProcessUtilities.execSync("git push " + remote + " " + tags.join(" "));
   }
 
   @logger.logifySync
