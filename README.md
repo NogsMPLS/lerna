@@ -175,7 +175,7 @@ Force a publish for the specified packages (comma-seperated) or all packages usi
 $ lerna updated
 ```
 
-1. Check which `packages` have changed since the last release, and log it.
+1. Check which `packages` have changed since the last release (the last git tag), and log it. Lerna determines the last git tag created and run `git diff --name-only v6.8.1` for example to get all files changed since that tag.
 
 ### Diff
 
